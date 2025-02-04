@@ -24,8 +24,13 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        <div className="bg-slate-500">
+          <Navbar />
+        </div>
         {children}
+        <div className="bg-slate-500 items-center text-center">
+          <footer>Footer</footer>
+        </div>
       </body>
     </html>
   );
