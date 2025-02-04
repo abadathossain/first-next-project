@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
+// import Navbar from "@/components/shared/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,9 +24,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-slate-500">
-          <Navbar />
-        </div>
+        <div className="bg-slate-500">{/* <Navbar /> */}</div>
         {children}
         <div className="bg-slate-500 items-center text-center">
           <footer>Footer</footer>
