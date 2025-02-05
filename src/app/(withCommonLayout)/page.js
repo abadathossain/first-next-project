@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Img from "../../assets/next.jpg";
-const HomePage = () => {
+const HomePage = async () => {
+  const res = await fetch("http://localhost:5000/posts");
+  const data = await res.json();
+  console.log(data);
   return (
     <div>
       <h1 className="text-4xl text-center text-blue-600">Home local Page</h1>
@@ -19,6 +22,13 @@ const HomePage = () => {
         height={200}
         className="mx-auto"
       />
+      <div className="grid grid-cols-2 gap-4 border-2 border-gray-500 p-4">
+        {data.map((post) => (
+          <div className="border-2" key={post.id}>
+            {post.title}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
