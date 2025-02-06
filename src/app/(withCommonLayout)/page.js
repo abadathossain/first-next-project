@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Img from "../../assets/next.jpg";
+import Link from "next/link";
 const HomePage = async () => {
-  const res = await fetch("http://localhost:5000/posts");
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
   console.log(data);
   return (
@@ -23,11 +24,18 @@ const HomePage = async () => {
         className="mx-auto"
       />
       <div className="grid grid-cols-2 gap-4 border-2 border-gray-500 p-4">
-        {data.map((post) => (
+        {data.slice(0, 6).map((post) => (
           <div className="border-2" key={post.id}>
             {post.title}
           </div>
         ))}
+      </div>
+      <div className="text-center">
+        <Link href="/about">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+            See More
+          </button>
+        </Link>
       </div>
     </div>
   );
