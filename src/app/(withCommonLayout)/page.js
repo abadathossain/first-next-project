@@ -4,6 +4,7 @@ import Link from "next/link";
 const HomePage = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
+  // for data loading
   console.log(data);
   return (
     <div>
