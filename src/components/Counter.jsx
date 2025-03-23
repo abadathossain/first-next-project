@@ -8,8 +8,9 @@ const Counter = () => {
         <div>
             Counter: {count}
             <div>
-                <button onClick={() => setCount(count + 1)}>Increment</button>
-                <button onClick={() => setCount(count - 1)}>Decrement</button>
+                <button className="bg-slate-700 mb-2 rounded-md p-3" onClick={() => setCount(count + 1)}>Increment</button>
+                <br />
+                <button className="bg-slate-700 mb-2 rounded-md p-3" onClick={() => setCount(count - 1)}>Decrement</button>
             </div>
         </div>
     );
